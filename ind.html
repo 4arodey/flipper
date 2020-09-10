@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container {
+            position:relative;
+            height:300px;
+            width:300px;
+            margin:20px auto;
+        }
+
+        #container > div {
+            position:absolute;
+            left:0;
+            top:0;
+            width:300px;
+            height:300px;
+            padding:20px;
+            background:#3C404B;
+            -webkit-transition:1.5s ease-in-out;
+            -moz-transition:1.5s ease-in-out;
+            transition:1.5s ease-in-out;
+        }
+
+        #container > div.lower {
+            background:#000;
+            -moz-backface-visibility:hidden;
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+            -moz-transform:perspective(800px) rotateY(180deg);
+            -webkit-transform:perspective(800px) rotateY(180deg);
+            transform:perspective(800px) rotateY(180deg);
+        }
+
+        #container > div h1 {
+            font-size:20px;
+            padding:0;
+            margin:0;
+            color:#fff;
+            line-height:40px;
+        }
+
+        #container > div p {
+            font-size:11px;
+            padding:0;
+            margin:0;
+            color:#eee;
+            line-height:20px;
+        }
+
+        #container > div a {
+            color:#ff0;
+        }
+
+        #container > div.upper {
+            -moz-backface-visibility:hidden;
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+            -moz-transform:perspective(800px) rotateY(0deg);
+            -webkit-transform:perspective(800px) rotateY(0deg);
+            transform:perspective(800px) rotateY(0deg);
+        }
+
+        #container:hover > div.lower {
+            -moz-transform:perspective(800px) rotateY(0);
+            -webkit-transform:perspective(800px) rotateY(0);
+            transform:perspective(800px) rotateY(0);
+        }
+
+        #container:hover > div.upper {
+            -webkit-transform:perspective(800px) rotateY(-179.9deg);
+            -moz-transform:perspective(800px) rotateY(-179.9deg);
+            transform:perspective(800px) rotateY(-179.9deg);
+        }
+    </style>
+</head>
+
+<body>
+<div id="container">
+    <div class="lower">
+        <h1>Back</h1>
+        <p>Works in IE10, Chrome, Firefox & Safari</p>
+        <p>Source <a href="https://www.cssplay.co.uk/menu/css3-3d-card.html">CssPlay</a>
+    </div>
+    <div class="upper">
+        <h1>Front</h1>
+        <p>Works in IE10, Chrome, Firefox & Safari</p>
+        <p>Source <a href="https://www.cssplay.co.uk/menu/css3-3d-card.html">CssPlay</a>
+    </div>
+</div>
+</body>
+</html>
